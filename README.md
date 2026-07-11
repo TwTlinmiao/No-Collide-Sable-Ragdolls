@@ -1,0 +1,1 @@
+禁止玩家与sable_player_ragdoll生成的布娃娃碰撞
