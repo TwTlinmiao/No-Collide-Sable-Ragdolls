@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: No-Collide Ragdolls
+Specification-Vendor: Custom
+Specification-Version: 1.0.0
+Implementation-Title: nocollide_ragdoll
+Implementation-Version: 1.0.0
+Implementation-Vendor: Custom
+Built-On-Minecraft: 1.21.1
+

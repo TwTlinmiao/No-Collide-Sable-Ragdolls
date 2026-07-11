@@ -1,0 +1,177 @@
+---- Minecraft Crash Report ----
+
+// What is this thing
+Please make sure this issue is not caused by Sable before reporting it to other mod authors.
+If you cannot reproduce it without Sable, file a report on the issue tracker
+https://github.com/ryanhcode/sable/issues
+
+// Hey, that tickles! Hehehe!
+
+Time: 2026-07-11 21:16:10
+Description: Load world
+
+java.net.ConnectException: connection refused: local:E:86c9a320
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.local.LocalChannel$LocalUnsafe.connect(LocalChannel.java:490) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1342) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:653) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:632) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:616) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:978) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel.connect(AbstractChannel.java:265) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.bootstrap.Bootstrap$3.run(Bootstrap.java:264) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174) ~[netty-common-4.1.97.Final.jar%23157!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.DefaultEventLoop.run(DefaultEventLoop.java:54) ~[netty-transport-4.1.97.Final.jar%23162!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.97.Final.jar%23157!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.97.Final.jar%23157!/:4.1.97.Final] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?] {re:mixin}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.fillReport(Minecraft.java:2395) ~[client-1.21.1-20240808.144430-srg.jar%23205!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:owo.mixins.json:MinecraftClientMixin from mod owo,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:owo.mixins.json:ui.MinecraftClientMixin from mod owo,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:ias.mixins.json:MinecraftAccessor from mod ias,pl:mixin:APP:ias.mixins.json:MinecraftMixin from mod ias,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Images from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Keybinds from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_PipelineManagement from mod iris,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:sodium-common.mixins.json:core.MinecraftMixin from mod sodium,pl:mixin:APP:sodium-neoforge.mixins.json:platform.neoforge.EntrypointMixin from mod sodium,pl:mixin:A,pl:runtimedistcleaner:A}
+-- Uptime --
+Details:
+	JVM uptime: 25.703s
+	Wall uptime: 14.885s
+	High-res time: 23.677s
+	Client ticks: 96 ticks / 4.800s
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.fillReport(Minecraft.java:2395) ~[client-1.21.1-20240808.144430-srg.jar%23205!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:owo.mixins.json:MinecraftClientMixin from mod owo,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:owo.mixins.json:ui.MinecraftClientMixin from mod owo,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:ias.mixins.json:MinecraftAccessor from mod ias,pl:mixin:APP:ias.mixins.json:MinecraftMixin from mod ias,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Images from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Keybinds from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_PipelineManagement from mod iris,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:sodium-common.mixins.json:core.MinecraftMixin from mod sodium,pl:mixin:APP:sodium-neoforge.mixins.json:platform.neoforge.EntrypointMixin from mod sodium,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.lambda$delayCrash$17(Minecraft.java:854) ~[client-1.21.1-20240808.144430-srg.jar%23205!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:owo.mixins.json:MinecraftClientMixin from mod owo,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:owo.mixins.json:ui.MinecraftClientMixin from mod owo,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:ias.mixins.json:MinecraftAccessor from mod ias,pl:mixin:APP:ias.mixins.json:MinecraftMixin from mod ias,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Images from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Keybinds from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_PipelineManagement from mod iris,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:sodium-common.mixins.json:core.MinecraftMixin from mod sodium,pl:mixin:APP:sodium-neoforge.mixins.json:platform.neoforge.EntrypointMixin from mod sodium,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.handleDelayedCrash(Minecraft.java:863) ~[client-1.21.1-20240808.144430-srg.jar%23205!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:owo.mixins.json:MinecraftClientMixin from mod owo,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:owo.mixins.json:ui.MinecraftClientMixin from mod owo,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:ias.mixins.json:MinecraftAccessor from mod ias,pl:mixin:APP:ias.mixins.json:MinecraftMixin from mod ias,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Images from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Keybinds from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_PipelineManagement from mod iris,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:sodium-common.mixins.json:core.MinecraftMixin from mod sodium,pl:mixin:APP:sodium-neoforge.mixins.json:platform.neoforge.EntrypointMixin from mod sodium,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:799) ~[client-1.21.1-20240808.144430-srg.jar%23205!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:owo.mixins.json:MinecraftClientMixin from mod owo,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:owo.mixins.json:ui.MinecraftClientMixin from mod owo,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:ias.mixins.json:MinecraftAccessor from mod ias,pl:mixin:APP:ias.mixins.json:MinecraftMixin from mod ias,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Images from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_Keybinds from mod iris,pl:mixin:APP:mixins.iris.json:MixinMinecraft_PipelineManagement from mod iris,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:sodium-common.mixins.json:core.MinecraftMixin from mod sodium,pl:mixin:APP:sodium-neoforge.mixins.json:platform.neoforge.EntrypointMixin from mod sodium,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23205!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:lightspeed.mixins.json:MinecraftMainMixin from mod lightspeed,pl:mixin:APP:veil.debug.mixins.json:client.DebugMainMixin from mod veil,pl:mixin:A,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.42.jar%23107!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.42.jar%23107!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.42.jar%23107!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.42/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.42.jar%23107!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23112!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23112!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23112!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23112!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23112!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23112!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23112!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources, mod/sodium, mod/entity_model_features, mod/entity_texture_features, mod/fabric_api_base, mod/fabric_renderer_api_v1, mod/owo, mod/customskinloader, mod/sable, mod/lightspeed, mod/curios, mod/sablecompanion, mod/ias, mod/neoforge, mod/artifacts, mod/fabric_block_view_api_v2, mod/iris, mod/veil, mod/sable_player_ragdoll, mod/ragdoll_corpse, mod/nocollide_ragdoll, mod/fabric_rendering_data_attachment_v1, mod/cloth_config, mod/expandability, file/FA+Player-v1.1.zip, file/FA+Player_Expressions-v1.2.zip
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.11, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 351183736 bytes (334 MiB) / 1006632960 bytes (960 MiB) up to 4294967296 bytes (4096 MiB)
+	CPUs: 18
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) Ultra 7 251HX
+	Identifier: Intel64 Family 6 Model 198 Stepping 2
+	Microarchitecture: unknown
+	Frequency (GHz): 3.26
+	Number of physical packages: 1
+	Number of physical CPUs: 18
+	Number of logical CPUs: 18
+	Graphics card #0 name: NVIDIA GeForce RTX 5060 Laptop GPU
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8151.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9207
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 6.40
+	Memory slot #0 type: Unknown
+	Virtual memory max (MiB): 34493.36
+	Virtual memory used (MiB): 27704.98
+	Swap memory total (MiB): 18432.00
+	Swap memory used (MiB): 1850.73
+	Space in storage for jna.tmpdir (MiB): available: 506466.69, total: 564694.00
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): available: 506466.69, total: 564694.00
+	Space in storage for io.netty.native.workdir (MiB): available: 506466.69, total: 564694.00
+	Space in storage for java.io.tmpdir (MiB): available: 277342.09, total: 409601.00
+	Space in storage for workdir (MiB): available: 506466.69, total: 564694.00
+	JVM Flags: 19 total; -Xmx4096m -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+UseG1GC -XX:G1MixedGCCountTarget=5 -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32m -XX:-OmitStackTraceInFastThrow -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:TieredCompileTaskTimeout=10000 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NmethodSweepActivity=1 -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Loaded Shaderpack: ComplementaryReimagined_r5.8.1.zip
+		Profile: HIGH (+0 options changed by user)
+	Launched Version: SableRagdoll
+	Launcher name: HMCL
+	Backend library: LWJGL version 3.3.3+5
+	Backend API: NVIDIA GeForce RTX 5060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 592.07, NVIDIA Corporation
+	Window size: 1920x1080
+	GFLW Platform: win32
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Universe: 400921fb54442d18
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Render Distance: 8/8 chunks
+	Resource Packs: vanilla, mod_resources, mod/sodium, mod/entity_model_features (incompatible), mod/entity_texture_features (incompatible), mod/fabric_api_base, mod/fabric_renderer_api_v1, mod/owo, mod/customskinloader (incompatible), mod/sable, mod/lightspeed, mod/curios (incompatible), mod/sablecompanion, mod/ias (incompatible), mod/neoforge, mod/artifacts, mod/fabric_block_view_api_v2, mod/iris, mod/veil (incompatible), mod/sable_player_ragdoll, mod/ragdoll_corpse, mod/nocollide_ragdoll, mod/fabric_rendering_data_attachment_v1, mod/cloth_config (incompatible), mod/expandability, file/FA+Player-v1.1.zip, file/FA+Player_Expressions-v1.2.zip
+	Current Language: zh_cn
+	Locale: zh_CN
+	System encoding: GBK
+	File encoding: GB18030
+	CPU: 18x Intel(R) Core(TM) Ultra 7 251HX
+	Server Running: true
+	Player Count: 0 / 8; []
+	Active Data Packs: vanilla, mod_data, mod/sodium, mod/entity_model_features (incompatible), mod/entity_texture_features (incompatible), mod/fabric_api_base, mod/fabric_renderer_api_v1, mod/owo, mod/customskinloader (incompatible), mod/sable, mod/lightspeed (incompatible), mod/curios (incompatible), mod/sablecompanion, mod/ias (incompatible), mod/neoforge, mod/artifacts, mod/fabric_block_view_api_v2, mod/iris, mod/veil (incompatible), mod/sable_player_ragdoll, mod/ragdoll_corpse (incompatible), mod/nocollide_ragdoll, mod/fabric_rendering_data_attachment_v1, mod/cloth_config (incompatible), mod/expandability
+	Available Data Packs: bundle, trade_rebalance, vanilla, mod/artifacts, mod/cloth_config (incompatible), mod/curios (incompatible), mod/customskinloader (incompatible), mod/entity_model_features (incompatible), mod/entity_texture_features (incompatible), mod/expandability, mod/fabric_api_base, mod/fabric_block_view_api_v2, mod/fabric_renderer_api_v1, mod/fabric_rendering_data_attachment_v1, mod/ias (incompatible), mod/iris, mod/lightspeed (incompatible), mod/neoforge, mod/nocollide_ragdoll, mod/owo, mod/ragdoll_corpse (incompatible), mod/sable, mod/sable_player_ragdoll, mod/sablecompanion, mod/sodium, mod/veil (incompatible), mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: 8632428375008027617
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclient
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar customskinloader-bootstrap TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		artifacts-neoforge-13.2.1.jar                     |Artifacts                     |artifacts                     |13.2.1              |Manifest: NOSIGNATURE
+		cloth-config-15.0.140-neoforge.jar                |Cloth Config v15 API          |cloth_config                  |15.0.140            |Manifest: NOSIGNATURE
+		curios-neoforge-9.5.1+1.21.1.jar                  |Curios API                    |curios                        |9.5.1+1.21.1        |Manifest: NOSIGNATURE
+		CustomSkinLoader-Common.jar                       |CustomSkinLoader              |customskinloader              |15.0.1              |Manifest: NOSIGNATURE
+		entity_model_features-3.2.4-1.21-neoforge.jar     |Entity Model Features         |entity_model_features         |3.2.4               |Manifest: NOSIGNATURE
+		entity_texture_features_1.21-neoforge-7.1.jar     |Entity Texture Features       |entity_texture_features       |7.1                 |Manifest: NOSIGNATURE
+		expandability-neoforge-12.0.0.jar                 |ExpandAbility                 |expandability                 |12.0.0              |Manifest: NOSIGNATURE
+		fabric-api-base-0.4.42+d1308ded19.jar             |Forgified Fabric API Base     |fabric_api_base               |0.4.42+d1308ded19   |Manifest: NOSIGNATURE
+		fabric-block-view-api-v2-1.0.10+9afaaf8c19.jar    |Forgified Fabric BlockView API|fabric_block_view_api_v2      |1.0.10+9afaaf8c19   |Manifest: NOSIGNATURE
+		fabric-renderer-api-v1-3.4.1+9125b6dc19.jar       |Forgified Fabric Renderer API |fabric_renderer_api_v1        |3.4.1+9125b6dc19    |Manifest: NOSIGNATURE
+		fabric-rendering-data-attachment-v1-0.3.48+73761d2|Forgified Fabric Rendering Dat|fabric_rendering_data_attachme|0.3.48+73761d2e19   |Manifest: NOSIGNATURE
+		IAS-9.0.7+1.21.1-neoforge.jar                     |In-Game Account Switcher      |ias                           |9.0.7+1.21.1-neoforg|Manifest: NOSIGNATURE
+		iris-neoforge-1.8.14-beta.1+mc1.21.1.jar          |Iris                          |iris                          |1.8.14-beta.1+mc1.21|Manifest: NOSIGNATURE
+		lightspeed-1.21.1-1.2.0hotfix3.jar                |Lightspeed                    |lightspeed                    |1.21.1-1.2.0hotfix3 |Manifest: NOSIGNATURE
+		client-1.21.1-20240808.144430-srg.jar             |Minecraft                     |minecraft                     |1.21.1              |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		neoforge-21.1.234-universal.jar                   |NeoForge                      |neoforge                      |21.1.234            |Manifest: NOSIGNATURE
+		nocollide_ragdoll-1.21.1-1.0.0.jar                |No-Collide Ragdolls           |nocollide_ragdoll             |1.0.0               |Manifest: NOSIGNATURE
+		owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar        |oωo                           |owo                           |0.12.15.5-beta.1+1.2|Manifest: NOSIGNATURE
+		sable-neoforge-1.21.1-2.0.3.jar                   |Sable                         |sable                         |2.0.3               |Manifest: NOSIGNATURE
+		sable-companion-common-1.21.1-1.6.0.jar           |Sable Companion               |sablecompanion                |1.6.0               |Manifest: NOSIGNATURE
+		sable_player_ragdoll-1.21.1-0.7.5fix2.jar         |Sable Ragdolls                |sable_player_ragdoll          |0.7.5               |Manifest: NOSIGNATURE
+		ragdoll_corpse-1.21.1-0.3.0.jar                   |Sable: Ragdoll Corpse         |ragdoll_corpse                |0.3.0               |Manifest: NOSIGNATURE
+		net.caffeinemc.sodium-neoforge-0.8.12+mc1.21.1-mod|Sodium                        |sodium                        |0.8.12+mc1.21.1     |Manifest: NOSIGNATURE
+		veil-neoforge-1.21.1-4.1.4.jar                    |Veil                          |veil                          |4.1.4               |Manifest: NOSIGNATURE
+	Crash Report UUID: aec69653-f175-49d5-9b9d-db34df391375
+	FML: 4.0.42
+	NeoForge: 21.1.234

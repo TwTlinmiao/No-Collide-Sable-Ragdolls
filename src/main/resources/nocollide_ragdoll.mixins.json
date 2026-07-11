@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "dev.nocollideragdoll.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "EntityPushMixin",
+        "EntityMoveMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
